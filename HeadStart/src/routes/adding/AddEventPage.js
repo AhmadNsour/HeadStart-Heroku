@@ -30,7 +30,7 @@ export default class AddEventPage extends Component {
     ) {
     } else {
       axios
-        .post("https://headstartapp.herokuapp.com/add-event", event)
+        .post("https://test-head-start-1.herokuapp.com/add-event", event)
         .then(res =>
           this.setState({
             msg: "Event Added Successfully! Check It In Events Page"

@@ -10,7 +10,7 @@ export default class JoinUsPage extends Component {
 
   submitApplication = () => {
     axios
-      .post("https://headstartapp.herokuapp.com/application", this.props.loggedInUser)
+      .post("https://test-head-start-1.herokuapp.com/application", this.props.loggedInUser)
       .then(res =>
         this.setState({
           msg: res.data

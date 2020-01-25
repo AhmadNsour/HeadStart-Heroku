@@ -62,7 +62,7 @@ export default class App extends Component {
   //USERS FUNCTIONS
 
   getLoggedInUser = () => {
-    axios.get("https://headstartapp.herokuapp.com/get-logged-in").then(response => {
+    axios.get("https://test-head-start-1.herokuapp.com/get-logged-in").then(response => {
       if (response.data !== null) {
         let loggedInUser = response.data;
         this.setState({ loggedInUser });
@@ -88,14 +88,14 @@ export default class App extends Component {
 
   //POSTS FUNCTIONS
   getPosts = () => {
-    axios.get("https://headstartapp.herokuapp.com/get-posts").then(response => {
+    axios.get("https://test-head-start-1.herokuapp.com/get-posts").then(response => {
       this.setState({ posts: response.data });
     });
   };
 
   //EVENTS FUNCTIONS
   getEvents() {
-    axios.get("https://headstartapp.herokuapp.com/get-events").then(response => {
+    axios.get("https://test-head-start-1.herokuapp.com/get-events").then(response => {
       this.setState({ events: response.data });
     });
   }

@@ -45,7 +45,7 @@ export default class UserProfilePage extends Component {
     ) {
       let user = { _id, name, email, mobileNumber, field };
       axios
-        .post(`https://headstartapp.herokuapp.com/update-user`, user)
+        .post(`https://test-head-start-1.herokuapp.com/update-user`, user)
         .then(res => {
           this.setState({
             msg: "Profile Updated Successfully!"

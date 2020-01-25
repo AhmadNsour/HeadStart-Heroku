@@ -18,7 +18,7 @@ export default class AddQuestionPage extends Component {
     event.target["answer"].value = "";
 
     axios
-      .post("https://headstartapp.herokuapp.com/add-post", {
+      .post("https://test-head-start-1.herokuapp.com/add-post", {
         question,
         answer,
         field,

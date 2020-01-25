@@ -15,7 +15,7 @@ export default class PostPage extends Component {
   getPostComments = () => {
     let id = this.props.location.state.post_id;
     axios
-      .get(`https://headstartapp.herokuapp.com/get-post-comments/${id}`)
+      .get(`https://test-head-start-1.herokuapp.com/get-post-comments/${id}`)
       .then(res => this.setState({ comments: res.data }))
       .catch(err => console.log(err));
   };
@@ -29,14 +29,14 @@ export default class PostPage extends Component {
     event.target["comment"].value = "";
 
     axios
-      .post("https://headstartapp.herokuapp.com/add-comment", { comment, user_id, post_id })
+      .post("https://test-head-start-1.herokuapp.com/add-comment", { comment, user_id, post_id })
       .then(res => this.getPostComments());
   };
 
   deleteComment = _id => {
     let user_id = this.props.loggedInUser._id;
     axios
-      .post("https://headstartapp.herokuapp.com/delete-user-comment", { _id, user_id })
+      .post("https://test-head-start-1.herokuapp.com/delete-user-comment", { _id, user_id })
       .then(res => {
         this.setState({ comments: res.data });
       });
@@ -45,7 +45,7 @@ export default class PostPage extends Component {
   deletePost = _id => {
     if (window.confirm("Delete Post?....")) {
       axios
-        .post("https://headstartapp.herokuapp.com/delete-post", { _id })
+        .post("https://test-head-start-1.herokuapp.com/delete-post", { _id })
         .then(res => this.props.history.goBack());
     } else {
       return false;
