@@ -63,9 +63,8 @@ export default class LoginPage extends Component {
   checkLogin = () => {
     let email = this.state.email;
     let password = this.state.password;
-    console.log(email, password)
     axios
-      .post("https://headstartapp.herokuapp.com/login-user", { email, password })
+      .post("https://test-head-start-1.herokuapp.com/login-user", { email, password })
       .then(res => {
         if (res.data !== null) {
           this.props.checkLogin(res.data);
