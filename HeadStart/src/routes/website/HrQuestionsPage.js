@@ -18,13 +18,13 @@ export default class HrQuestionsPage extends Component {
 
   getHrPosts = () => {
     axios
-      .get(`http://localhost:9000/get-hr-posts`)
+      .get(`https://headstartapp.herokuapp.com/get-hr-posts`)
       .then(res => this.setState({ posts: res.data }))
       .catch(err => console.log(err));
   };
 
   deletePost = _id => {
-    axios.post("http://localhost:9000/delete-tech-post", { _id }).then(res =>
+    axios.post("https://headstartapp.herokuapp.com/delete-tech-post", { _id }).then(res =>
       this.setState({ posts: res.data }, () => {
         this.props.history.go("/HrQuestionsPage");
         this.getHrPosts();

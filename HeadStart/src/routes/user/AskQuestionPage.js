@@ -21,7 +21,7 @@ export default class AskQuestionPage extends Component {
     };
 
     axios
-      .post("http://localhost:9000/ask-question", question)
+      .post("https://headstartapp.herokuapp.com/ask-question", question)
       .then(res => {
         this.setState({
           msg:

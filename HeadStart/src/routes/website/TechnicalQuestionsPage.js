@@ -17,7 +17,7 @@ export default class TechnicalQuestionsPage extends Component {
 
   getTechnicalPosts = () => {
     axios
-      .get(`http://localhost:9000/get-technical-posts`)
+      .get(`https://headstartapp.herokuapp.com/get-technical-posts`)
       .then(res => {
         if (this._isMounted) {
           this.setState({ posts: res.data });
@@ -27,7 +27,7 @@ export default class TechnicalQuestionsPage extends Component {
   };
 
   deletePost = _id => {
-    axios.post("http://localhost:9000/delete-tech-post", { _id }).then(res =>
+    axios.post("https://headstartapp.herokuapp.com/delete-tech-post", { _id }).then(res =>
       this.setState({ posts: res.data }, () => {
         this.props.history.go("/TechnicalQuestionPage");
       })

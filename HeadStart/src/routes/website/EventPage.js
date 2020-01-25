@@ -5,7 +5,7 @@ export default class EventPage extends Component {
   deleteEvent = _id => {
     if (window.confirm("Delete Event?....")) {
       axios
-        .post("http://localhost:9000/delete-event", { _id })
+        .post("https://headstartapp.herokuapp.com/delete-event", { _id })
         .then(res => this.props.history.goBack());
     } else {
       return false;

@@ -126,7 +126,7 @@ export default class RegisterPage extends Component {
 
   registerUser = user => {
     axios
-      .post("http://localhost:9000/register-user", user)
+      .post("https://headstartapp.herokuapp.com/register-user", user)
       .then(res => {
         console.log(res.data);
         if (res.data !== null) {

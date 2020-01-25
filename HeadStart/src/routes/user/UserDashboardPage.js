@@ -22,7 +22,7 @@ export default class UserDashboardPage extends Component {
 
   getPosts() {
     axios
-      .post("http://localhost:9000/get-user-posts", this.props.loggedInUser)
+      .post("https://headstartapp.herokuapp.com/get-user-posts", this.props.loggedInUser)
       .then(res => {
         if (this._isMounted) {
           this.setState({ posts: res.data });
@@ -32,7 +32,7 @@ export default class UserDashboardPage extends Component {
 
   getComments() {
     axios
-      .post("http://localhost:9000/get-user-comments", this.props.loggedInUser)
+      .post("https://headstartapp.herokuapp.com/get-user-comments", this.props.loggedInUser)
       .then(res => {
         if (this._isMounted) {
           this.setState({ comments: res.data });
@@ -43,7 +43,7 @@ export default class UserDashboardPage extends Component {
   deleteComment = _id => {
     let user_id = this.props.loggedInUser._id;
     axios
-      .post("http://localhost:9000/delete-user-comment", { _id, user_id })
+      .post("https://headstartapp.herokuapp.com/delete-user-comment", { _id, user_id })
       .then(res => {
         this.setState({ comments: res.data });
       });
@@ -52,7 +52,7 @@ export default class UserDashboardPage extends Component {
   getPendings() {
     axios
       .post(
-        "http://localhost:9000/get-user-pending-questions",
+        "https://headstartapp.herokuapp.com/get-user-pending-questions",
         this.props.loggedInUser
       )
       .then(res => {
@@ -65,14 +65,14 @@ export default class UserDashboardPage extends Component {
   deletePost = _id => {
     let user_id = this.props.loggedInUser._id;
     axios
-      .post("http://localhost:9000/delete-user-post", { _id, user_id })
+      .post("https://headstartapp.herokuapp.com/delete-user-post", { _id, user_id })
       .then(res => this.setState({ posts: res.data }));
   };
 
   deletePending = _id => {
     let user_id = this.props.loggedInUser._id;
     axios
-      .post("http://localhost:9000/delete-pending", { _id, user_id })
+      .post("https://headstartapp.herokuapp.com/delete-pending", { _id, user_id })
       .then(res => {
         this.getPendings();
       });

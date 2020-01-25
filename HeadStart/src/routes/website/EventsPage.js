@@ -14,7 +14,7 @@ export default class EventsPage extends Component {
   }
 
   getEvents() {
-    axios.get("http://localhost:9000/get-events").then(response => {
+    axios.get("https://headstartapp.herokuapp.com/get-events").then(response => {
       if (this._isMounted) {
         this.setState({ events: response.data });
       }
@@ -22,7 +22,7 @@ export default class EventsPage extends Component {
   }
 
   deleteEvent = _id => {
-    axios.post("http://localhost:9000/delete-event", { _id }).then(res => {
+    axios.post("https://headstartapp.herokuapp.com/delete-event", { _id }).then(res => {
       if (this._isMounted) {
         this.setState({ events: res.data }, () => {
           this.props.history.go("/EventsPage");
