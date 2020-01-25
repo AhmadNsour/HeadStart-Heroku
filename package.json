@@ -1,0 +1,25 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "head-start interviews website server and database",
+  "main": "server.js",
+   "scripts": {
+    "HeadStart-install": "npm install --prefix HeadStart",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "HeadStart": "npm start ==prefix HeadStart",
+    "dev": "concurrently \"npm run server\" \"npm run HeadStart\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix HeadStart && npm run build --prefix HeadStart"
+  },
+  "author": "interviews-team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.6"
+  },
+  "devDependencies": {
+    "node": "^12.12.0",
+    "nodemon": "^1.19.4"
+  }
+}
